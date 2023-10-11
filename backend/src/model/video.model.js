@@ -5,7 +5,7 @@ const videoSchema=mongoose.Schema({
         type:String,
         required:true,
         validate(value){
-            if(!value.match(/youtube\.com\/embed\//) || !value.match(/player\.vimeo\.com\/video\//))
+            if(!value.match(/youtube\.com\/embed\//) && !value.match(/player\.vimeo\.com\/video\//))
             throw new Error("\"videoLink\" is required")
         }
     },
