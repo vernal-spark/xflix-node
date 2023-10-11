@@ -1,13 +1,11 @@
 const {searchVideos,getById,createVideos,patchVotes,patchViews}=require('../services/index')
 const catchAsync=require('../utils/CatchAsync')
 const getVideos=catchAsync(async(req,res)=>{
-    console.log(req.query)
     const title=req.query.title?req.query.title:''
     const genre=req.query.genres?req.query.genres:["All"]
     const genres=genre.split(',')
     const contentRating=req.query.contentRating?req.query.contentRating:"All"
     const sortBy=req.query.sortBy?req.query.sortBy:"releaseDate"
-    console.log(title,genres,contentRating,sortBy)
     const result=await searchVideos(title,genres,contentRating,sortBy)
     res.status(200).json({videos:result})
 })
