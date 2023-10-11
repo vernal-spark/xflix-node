@@ -8,8 +8,8 @@ const getPossibleContentRatings=(contentRating)=>{
         return possibleRatings
     }
     const i=possibleRatings.indexOf(contentRating)
-    possibleRatings.splice(i)
-    return possibleRatings
+    const newRatings=possibleRatings.splice(i)
+    return newRatings;
 }
 const searchVideos=async(title,genre,contentRating,sortBy)=>{
     const titleMatch={title:{$regex:title,$options:'i'}}
