@@ -18,8 +18,8 @@ const searchVideos=async(title,genre,contentRating,sortBy)=>{
     if(genre=="All"){
         genreMatch=null
     }
-    console.log(genreMatch)
-    let contentRatingMatch={contentRating:contentRating}
+   const contentRatingArray= getPossibleContentRatings(contentRating)
+    let contentRatingMatch={contentRating:contentRatingArray}
     if(contentRating=='Anyone'){
         contentRatingMatch=null
     }
