@@ -14,7 +14,6 @@ const getPossibleContentRatings=(contentRating)=>{
 const searchVideos=async(title,genre,contentRating,sortBy)=>{
     const titleMatch={title:{$regex:title,$options:'i'}}
     let genreMatch={genre:{$in:genre}}
-    console.log(genre)
     if(genre=="All"){
         genreMatch=null
     }
